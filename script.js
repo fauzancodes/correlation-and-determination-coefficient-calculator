@@ -224,7 +224,7 @@ function showResult() {
     document.getElementById("lengthXSumXMinusSumXsumY").innerHTML = lengthXSumXMinusSumXsumY;
     console.log(r);
     document.getElementById("r").innerHTML = r;
-    document.getElementById("r-big").innerHTML = r.toFixed(8);
+    document.getElementById("r-big").innerHTML = r;
     $("#fileLabel").removeClass("border-danger text-danger");
     $("#fileLabel").addClass("border-primary");
     $("#dataReq").removeClass("text-danger font-weight-bold");
