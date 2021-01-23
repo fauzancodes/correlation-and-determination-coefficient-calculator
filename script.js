@@ -128,7 +128,7 @@ function calculating() {
 
     //calculating sum of square x and y
     sumSquareX = eval(squareX.join("+"));
-    sumSquareY = eval(squareX.join("+"));
+    sumSquareY = eval(squareY.join("+"));
 
     //calculating length sum square of x and y
     lengthXSumSquareX = lengthX * sumSquareX;
