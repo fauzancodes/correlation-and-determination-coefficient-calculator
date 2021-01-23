@@ -153,8 +153,11 @@ function calculating() {
     //calculating length sum x minus sum of x and y
     lengthXSumXMinusSumXsumY = lengthSumXY - sumXSumY;
 
-    //calculating the correlation coeficient
+    //calculating the correlation coefficient
     r = lengthXSumXMinusSumXsumY / sqrtLengthXYSumSquareXYMinusSumXY;
+
+    //calculating the determination coefficient
+    r2 = Math.pow(r, 2);
 };
 
 //warning that the data doesn't meet the requierments
@@ -225,6 +228,9 @@ function showResult() {
     console.log(r);
     document.getElementById("r").innerHTML = r;
     document.getElementById("r-big").innerHTML = r;
+    console.log(r2);
+    document.getElementById("r2").innerHTML = r2;
+    document.getElementById("r2-big").innerHTML = r2;
     $("#fileLabel").removeClass("border-danger text-danger");
     $("#fileLabel").addClass("border-primary");
     $("#dataReq").removeClass("text-danger font-weight-bold");
