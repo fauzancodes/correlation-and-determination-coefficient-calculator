@@ -11,18 +11,20 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <link rel=icon href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/svgs/solid/square-root-alt.svg>
-        <title>Correlation Coeficient Calculator</title>
+        <title>Correlation and Determination Coeficient Calculator</title>
     </head>
     <body onload="init()">
         <div class="container">
-            <h1 class="pt-5 font-weight-bold">Correlation Coefficient Calculator</h1>
+            <h1 class="pt-5 font-weight-bold">Correlation and Determination Coefficient Calculator</h1>
             <br/>
             <br/>
             <h3 class="overflow-auto">$$r={n\left(\sum_i^{n_x}\left(x_i\right)\left(y_i\right)\right)-\left(\left(\sum_i^{n_x}x_i\right)\left(\sum_i^{n_y}y_i\right)\right)\over\sqrt{\left(n_x\left(\sum_i^{n_x}x_i^2\right)-\left(\sum_i^{n_x}x_i\right)^2\right)\left(n_y\left(\sum_i^{n_y}y_i^2\right)-\left(\sum_i^{n_y}y_i\right)^2\right)}}$$</h3>
+            <h3 class="overflow-auto">$$R^2 = r^2$$</h3>
             <br/>
             <p>Where:
                 <ul>
                     <li>\(r=\) pearson product-moment correlation coefficient</li>
+                    <li>\(R^2\) coefficient of determination</li>
                     <li>\(x=\) values of x-variable in sample</li>
                     <li>\(y=\) values of y-variable in sample</li>
                     <li>\(n=\) length of values</li>
@@ -34,6 +36,8 @@
                 and our measure of the degree or strength of this realtionship is represented by <b>correlation coefficient</b>.
                 We can use a number of different correlation coefficients, depending primarily on the underlying nature of the measurements, 
                 but the most common correlation coefficient—the <b>Pearson product-moment correlation coefficient	\(\left(r\right)\)</b>.
+                The squared correlation coefficient or <b>coefficient of determination \(\left(R^2\right)\)</b> is very important statistic
+                to explain the strength of the relationship we have between two variables.
             </p>
             <p class="text-justify">
                 It is important to note that the sign of the correlation coefficient has no meaning other than to denote the direction of the relationship.
@@ -288,7 +292,7 @@
                         </p>
                         <br/>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
                         <p class="mb-4 font-weight-bold">\(r\)<i class="fas fa-chevron-circle-down text-primary px-2"></i> 
                             <div id="r" class="font-weight-bold border border-primary rounded overflow-auto p-2 text-nowrap mx-2" style="max-width: fit-content;max-height: 250px;">
                                 <span class="text-secondary">. . . . .</span>
@@ -297,16 +301,34 @@
                         </p>
                         <br/>
                     </div>
+                    <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                        <p class="mb-4 font-weight-bold">\(R^2\)<i class="fas fa-chevron-circle-down text-primary px-2"></i> 
+                            <div id="r2" class="font-weight-bold border border-primary rounded overflow-auto p-2 text-nowrap mx-2" style="max-width: fit-content;max-height: 250px;">
+                                <span class="text-secondary">. . . . .</span>
+                            </div>
+                            <button class="btn btn-outline-primary btn-sm m-2" onclick="copy('#r2')">copy</button>
+                        </p>
+                        <br/>
+                    </div>
                 </div>
                 <button id="details-hide" class="btn btn-primary btn-block">Hide Details</button>
             </div>
-            <h3 id="result" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 overflow-auto text-nowrap">\(r=\)
-                <span id="r-big" class="border border-primary rounded overflow-auto pb-2 pr-2 pl-2 text-nowrap mx-2" style="max-width: fit-content;max-height: 250px;">
-                    <span class="text-secondary">. . . . .</span>
-                </span>
-                <button class="btn btn-outline-primary btn-sm m-2" onclick="copy('#r-big')">copy</button>
-            </h3>
-            <br/>
+            <div  id="result" class="row">
+                <h3 class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 overflow-auto text-nowrap">\(r=\)
+                    <span id="r-big" class="border border-primary rounded overflow-auto pb-2 pr-2 pl-2 text-nowrap mx-2" style="max-width: fit-content;max-height: 250px;">
+                        <span class="text-secondary">. . . . .</span>
+                    </span>
+                    <button class="btn btn-outline-primary btn-sm m-2" onclick="copy('#r-big')">copy</button>
+                </h3>
+                <br/>
+                <h3 class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 overflow-auto text-nowrap">\(R^2=\)
+                    <span id="r2-big" class="border border-primary rounded overflow-auto pb-2 pr-2 pl-2 text-nowrap mx-2" style="max-width: fit-content;max-height: 250px;">
+                        <span class="text-secondary">. . . . .</span>
+                    </span>
+                    <button class="btn btn-outline-primary btn-sm m-2" onclick="copy('#r2-big')">copy</button>
+                </h3>
+                <br/>
+            </div>
             <button id="details-show" class="d-none btn btn-primary btn-block">Show Details</button>
             <br/>
         </div>
